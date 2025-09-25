@@ -1,248 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Training Hub — Courses, Business & Mentor Chatbot</title>
-  <meta name="description" content="AI Training Hub: courses (Fundamentals, Start Your Own AI Business, Retraining Into AI), free mentor chatbot, business services and UK funding guidance." />
-  <link rel="icon" href="#" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10x AI</title>
   <style>
-    /* Minimal, clean styling - responsive layout */
-    :root{--bg:#f8fafc;--card:#fff;--muted:#6b7280;--accent:#0ea5a4}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:var(--bg);color:#0f172a}
-    .wrap{max-width:1100px;margin:28px auto;padding:20px}
-    header{display:flex;justify-content:space-between;align-items:center;gap:16px}
-    h1{margin:0;font-size:1.6rem}
-    p.lead{margin:6px 0;color:var(--muted)}
-    nav a{margin-left:12px;color:#0f172a;text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:18px}
-    .card{background:var(--card);border-radius:10px;padding:16px;box-shadow:0 1px 4px rgba(15,23,42,0.04)}
-    .course-list{display:grid;gap:10px}
-    .course{padding:12px;border-radius:8px;border:1px solid #eef2f7}
-    .cta{display:inline-block;background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
-    .small{font-size:0.9rem;color:var(--muted)}
-    footer{margin-top:26px;text-align:center;color:var(--muted)}
-    /* chatbot */
-    #chatbot-btn{position:fixed;right:20px;bottom:20px;background:#0ea5a4;color:#fff;border:none;border-radius:999px;padding:14px 16px;font-weight:700;box-shadow:0 6px 18px rgba(14,165,164,0.18);cursor:pointer}
-    #chatbox{position:fixed;right:20px;bottom:84px;width:360px;max-height:70vh;background:var(--card);border-radius:12px;box-shadow:0 14px 50px rgba(2,6,23,0.12);overflow:hidden;display:none;flex-direction:column}
-    #chatbox header{padding:12px;background:#0f172a;color:#fff}
-    #chatbox .messages{padding:12px;overflow:auto;flex:1}
-    .msg{margin-bottom:10px;padding:8px 10px;border-radius:8px;max-width:82%}
-    .bot{background:#eef2f7;color:#0f172a}
-    .user{background:#0ea5a4;color:white;margin-left:auto}
-    #chatbox footer{padding:8px;background:#fff;border-top:1px solid #eef2f7;display:flex;gap:8px}
-    #chatbox input{flex:1;padding:8px;border-radius:8px;border:1px solid #e6eef2}
-    button.link{background:none;border:0;color:var(--accent);cursor:pointer}
-    pre{background:#0f172a;color:#e6eef2;padding:12px;border-radius:8px;overflow:auto}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}#chatbox{right:10px;left:10px;width:auto}}
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fdfdfd; color: #333; }
+    header { background: linear-gradient(90deg, #ff7a00, #4db8ff); color: white; padding: 1rem; text-align: center; }
+    nav a { margin: 0 1rem; color: white; text-decoration: none; font-weight: bold; }
+    .hero { text-align: center; padding: 3rem 1rem; background: #f9f9f9; }
+    .hero h1 { color: #ff7a00; font-size: 2.5rem; }
+    .cards { display: flex; flex-wrap: wrap; justify-content: center; padding: 2rem; gap: 1rem; }
+    .card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; width: 280px; box-shadow: 2px 2px 8px rgba(0,0,0,0.05); }
+    .card h3 { color: #4db8ff; }
+    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    footer a { color: #4db8ff; margin: 0 0.5rem; text-decoration: none; }
+    .chatbot { max-width: 500px; margin: 2rem auto; padding: 1rem; border: 2px solid #ccc; border-radius: 10px; background: #fff; }
+    #chat-window { height: 200px; overflow-y: auto; background: #f9f9f9; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; }
+    .user-message { text-align: right; margin: 0.5rem; color: #ff7a00; }
+    .bot-message { text-align: left; margin: 0.5rem; color: #4db8ff; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"10x AI",
-    "url":"https://example.com",
-    "logo":"https://example.com/logo.png",
-    "sameAs":["https://www.linkedin.com/", "https://twitter.com/"]
-  }
-  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>AI Training Hub</h1>
-        <p class="lead">Training, consulting, and a free mentor chatbot to help UK businesses & learners adopt AI responsibly.</p>
-      </div>
-      <nav>
-        <a href="#courses">Courses</a>
-        <a href="#business">For Business</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact" class="cta">Book: £147 (September)</a>
-      </nav>
-    </header>
+  <header>
+    <h1>10x AI</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog1.html">Articles</a>
+      <a href="terms.html">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <main class="grid">
-      <section>
-        <div class="card">
-          <h2 id="courses">Courses</h2>
-          <p class="small">Three starter courses — free modules + paid upgrades. Expandable later.</p>
-          <div class="course-list">
-            <div class="course">
-              <strong>AI Fundamentals</strong>
-              <div class="small">Maths, ML basics, neural nets, TensorFlow intro. Exercises & quizzes.</div>
-              <div style="margin-top:8px"><a class="small" href="#">View module</a> • <a class="small" href="#">Start free module</a></div>
-            </div>
-            <div class="course">
-              <strong>Start Your Own AI Business</strong>
-              <div class="small">Market-fit, MVP, UK funding sources (Innovate UK, SEIS/EIS), pitch & fundraising.</div>
-              <div style="margin-top:8px"><a class="small" href="#">View module</a> • <a class="small" href="#">Start free module</a></div>
-            </div>
-            <div class="course">
-              <strong>Retraining Into AI</strong>
-              <div class="small">Career pathways, skills mapping, portfolio projects and job-ready exercises.</div>
-              <div style="margin-top:8px"><a class="small" href="#">View module</a> • <a class="small" href="#">Start free module</a></div>
-            </div>
-          </div>
-        </div>
+  <section class="hero">
+    <h1>Accelerate Your AI Journey</h1>
+    <p>Courses, consulting, and AI solutions for the future.</p>
+  </section>
 
-        <div class="card" style="margin-top:16px">
-          <h2 id="business">For Businesses</h2>
-          <p class="small">Services: consulting, AI dev & project management, training for teams, and research partnerships.</p>
-          <ul>
-            <li>AI readiness & red-flag audits</li>
-            <li>Outsourced development with PM (markup model)</li>
-            <li>Robotics prototyping & lab partnerships</li>
-            <li>Funding advice (UK grants & accelerators)</li>
-          </ul>
-          <p class="small">Quick CTA: start with a <strong>Free AI Review Chatbot</strong>, then book a paid 45-minute strategy session via WhatsApp (£147 September rate).</p>
-          <p><a class="cta" id="whatsapp-cta" href="https://wa.me/447700900000?text=I%20want%20to%20book%20an%20AI%20strategy%20session" target="_blank">Book on WhatsApp</a></p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h2 id="blog">Blog / AI News</h2>
-          <p class="small">Weekly posts: retraining, funding, red flags, ethical AI, and short summaries of research.</p>
-          <div style="margin-top:8px">
-            <article style="margin-bottom:10px">
-              <strong>Retraining into AI: A practical roadmap</strong>
-              <div class="small">Published: 2025-09-25 • <a href="#">Read</a> • <a href="#">Share</a></div>
-            </article>
-            <article style="margin-bottom:10px">
-              <strong>AI Red Flags for UK Businesses</strong>
-              <div class="small">Published: 2025-09-25 • <a href="#">Read</a> • <a href="#">Share</a></div>
-            </article>
-          </div>
-          <p class="small">Subscribe: <button id="rss-download" class="link">Download RSS</button></p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h2>Resources</h2>
-          <ul class="small">
-            <li><a href="#">Coding exercises (Python/TensorFlow)</a></li>
-            <li><a href="#">Red Flags checklist (PDF)</a></li>
-            <li><a href="#">UK funding sources & How to apply (guide)</a></li>
-          </ul>
-        </div>
-
-      </section>
-
-      <aside>
-        <div class="card">
-          <h3>Quick Actions</h3>
-          <p class="small">Free AI Review via Mentor Chatbot — click the button bottom-right to open it.</p>
-          <p class="small">Want a fast revenue path? Book a £147 strategy session via WhatsApp.</p>
-          <p style="margin-top:12px"><a class="cta" href="#contact">Contact</a></p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h3>Mini-courses on Reed</h3>
-          <p class="small">We’ll publish short £15 mini-courses on Reed for retraining & business. Reed listing will be linked here.</p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h3>Influencer & Content</h3>
-          <p class="small">We publish weekly articles and push to LinkedIn, Medium. Topics prioritized: Retraining, Red Flags, UK Funding.</p>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h3>Contact</h3>
-          <p class="small">Email: info@yourdomain.com</p>
-          <p class="small">WhatsApp: <a href="https://wa.me/447700900000">Start chat</a></p>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <div class="small">© AI Training Hub — education, consultancy & innovation. Built to be expanded. RSS & schema support included.</div>
-    </footer>
-  </div>
-
-  <!-- Floating chatbot button + box -->
-  <button id="chatbot-btn">Mentor Chat</button>
-  <div id="chatbox" role="dialog" aria-label="Mentor chatbot" style="display:flex;flex-direction:column">
-    <header>AI Mentor — free review</header>
-    <div class="messages" id="messages">
-      <div class="msg bot">Hi — I can help check if your AI project is suitable. Type a question or say "start review" to begin.</div>
+  <section class="cards">
+    <div class="card">
+      <h3>AI Courses</h3>
+      <p>Learn the fundamentals and advanced AI concepts. Build your knowledge with structured modules.</p>
     </div>
-    <footer>
-      <input id="chat-input" placeholder="Ask the mentor or type 'start review'" />
-      <button id="send">Send</button>
-    </footer>
-  </div>
+    <div class="card">
+      <h3>Business AI</h3>
+      <p>Discover how AI can transform your business with efficiency, growth, and smarter decisions.</p>
+    </div>
+    <div class="card">
+      <h3>AI Insights</h3>
+      <p>Read our latest articles about trends, red flags, and starting your own AI company.</p>
+    </div>
+  </section>
+
+  <section class="chatbot">
+    <h2>💬 Ask the AI Mentor</h2>
+    <div id="chat-window">
+      <div class="bot-message">Hi! I'm your AI Mentor. What would you like to know?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your question...">
+    <button onclick="sendMessage()">Send</button>
+  </section>
+
+  <footer id="contact">
+    <p>📞 <a href="https://wa.me/1234567890">Book a 30-min AI Consultation (WhatsApp)</a></p>
+    <p>Follow us on <a href="#">X (Coming Soon)</a></p>
+    <p><a href="terms.html">Terms & Privacy</a></p>
+  </footer>
 
   <script>
-    // Simple FAQ + project suitability flow (runs entirely in the browser)
-    const faqs = {
-      "what is pca": "PCA (Principal Component Analysis) is a dimensionality reduction method...",
-      "how to set up python": "Install Python from python.org, use pip for numpy/pandas/tensorflow. We provide exercises in the 'Resources' section.",
-      "how to fund an ai startup": "In the UK consider Innovate UK grants, SEIS/EIS for investors, and accelerators such as Founders Factory or Digital Catapult.",
-      "do i need a phd": "No — practical projects and a portfolio are often more important than formal degrees for many AI roles."
-    };
-
-    const screeningQuestions = [
-      {q: 'Is your project for a paying customer or internal improvement? (yes/no)', key:'paying'},
-      {q: 'Do you have more than 500 rows of representative data? (yes/no)', key:'data'},
-      {q: 'Is there a clear business metric to improve (e.g. reduce cost, increase revenue)? (yes/no)', key:'metric'},
-      {q: 'Is the expected time-to-value less than 6 months? (yes/no)', key:'ttv'}
-    ];
-
-    let screenState = {step:0, answers:{}};
-
-    const btn = document.getElementById('chatbot-btn');
-    const box = document.getElementById('chatbox');
-    const input = document.getElementById('chat-input');
-    const send = document.getElementById('send');
-    const messages = document.getElementById('messages');
-
-    function appendMsg(text, cls='bot'){
-      const d = document.createElement('div'); d.className = 'msg ' + cls; d.textContent = text; messages.appendChild(d); messages.scrollTop = messages.scrollHeight;
-    }
-
-    btn.addEventListener('click', ()=>{ box.style.display = box.style.display === 'none' ? 'flex' : 'none'; input.focus(); });
-
-    send.addEventListener('click', ()=>{ handleInput(input.value); input.value = ''; input.focus(); });
-    input.addEventListener('keyup', (e)=>{ if(e.key==='Enter'){ send.click(); } });
-
-    function handleInput(text){
-      if(!text) return;
-      appendMsg(text, 'user');
-      const t = text.trim().toLowerCase();
-      // screening flow
-      if(t === 'start review' || screenState.step>0){
-        runScreening(t);
-        return;
+    function sendMessage() {
+      const input = document.getElementById('user-input').value;
+      const chat = document.getElementById('chat-window');
+      chat.innerHTML += `<div class="user-message">${input}</div>`;
+      if (input.toLowerCase().includes("cost")) {
+        chat.innerHTML += `<div class="bot-message">AI project costs vary — want a free suitability check?</div>`;
+      } else if (input.toLowerCase().includes("course")) {
+        chat.innerHTML += `<div class="bot-message">Our AI courses start with fundamentals and build up to advanced topics.</div>`;
+      } else {
+        chat.innerHTML += `<div class="bot-message">That's a great question. Let's explore in a consult!</div>`;
       }
-      // FAQ
-      let answered=false;
-      Object.keys(faqs).forEach(k=>{ if(t.includes(k)){ appendMsg(faqs[k],'bot'); answered=true; } });
-      if(!answered){ appendMsg("I can help with course info, funding advice, retraining paths, or you can type 'start review' to run the project suitability check.", 'bot'); }
+      document.getElementById('user-input').value = "";
     }
-
-    function runScreening(last){
-      if(screenState.step === 0){ appendMsg(screeningQuestions[0].q); screenState.step=1; return; }
-      // Record answer for previous
-      const prevIdx = screenState.step-1;
-      if(prevIdx>=0 && prevIdx<screeningQuestions.length){ screenState.answers[screeningQuestions[prevIdx].key] = (last.includes('yes')? 'yes':'no'); }
-      if(screenState.step < screeningQuestions.length){ appendMsg(screeningQuestions[screenState.step].q); screenState.step++; return; }
-      // screening finished
-      const a = screenState.answers; let score=0; Object.values(a).forEach(v=>{ if(v==='yes') score++; });
-      appendMsg('Screening complete. Score: '+score+'/'+screeningQuestions.length);
-      if(score>=3){ appendMsg('This project looks like a reasonable fit for an AI pilot. You can book a 45-minute strategy session via WhatsApp for £147 (September discount).');
-        appendMsg('Book now: click the WhatsApp button on the site or use this link: https://wa.me/447700900000?text=I%20want%20to%20book%20an%20AI%20strategy%20session');
-      } else { appendMsg('Based on your answers, this idea may not be a strong fit for an AI project yet. Consider collecting more data or clarifying the business metric. We have free retraining resources under Courses.'); }
-      // reset
-      screenState = {step:0, answers:{}};
-    }
-
-    // RSS Download generator (simple static rss with current placeholder posts)
-    document.getElementById('rss-download').addEventListener('click', ()=>{
-      const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n<channel>\n<title>AI Training Hub - News</title>\n<link>https://example.com/</link>\n<description>Latest posts from AI Training Hub</description>\n<item><title>Retraining into AI: A practical roadmap</title><link>https://example.com/retraining</link><pubDate>Thu, 25 Sep 2025 12:00:00 GMT</pubDate><description>How to retrain into AI.</description></item>\n<item><title>AI Red Flags for UK Businesses</title><link>https://example.com/red-flags</link><pubDate>Thu, 25 Sep 2025 12:00:00 GMT</pubDate><description>Key red flags for AI projects.</description></item>\n</channel>\n</rss>`;
-      const blob = new Blob([rss], {type:'application/rss+xml'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'rss.xml'; a.click(); URL.revokeObjectURL(url);
-    });
-
-    // Simple safeguard: replace sample whatsapp number before production
   </script>
 </body>
 </html>
